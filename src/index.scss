@@ -1,0 +1,91 @@
+@use "./theme/theme.module.scss" as theme;
+// @import-normalize;
+
+@font-face {
+  font-family: 'pixel_sans_serif_condensedRg';
+  src: url('./media/fonts/pixel_sans_serif_condensed-webfont.woff2') format('woff2'),
+    url('./media/fonts/pixel_sans_serif_condensed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'pixel_sans_serifregular';
+  src: url('./media/fonts/pixel_sans_serif-webfont.woff2') format('woff2'),
+    url('./media/fonts/pixel_sans_serif-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'pixelmixregular';
+  src: url('./media/fonts/pixelmix-webfont.woff2') format('woff2'),
+    url('./media/fonts/pixelmix-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'pixel_sans_serif_condensedRg', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: theme.$color-main-bg;
+  background-image: url("../src/media/images/main-bg.png");
+  background-position: bottom center;
+  background-size: auto theme.$height-page-min;
+  background-repeat: no-repeat;
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.field-b-margin-m {
+  margin-bottom: 32px;
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    margin-bottom: 24px;
+  }
+}
+
+.field-b-margin-l {
+  margin-bottom: 44px;
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    margin-bottom: 34px;
+  }
+}

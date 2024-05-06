@@ -1,0 +1,193 @@
+@use "../../theme/theme.module.scss" as theme;
+
+@mixin decoration {}
+
+.sidebar_placeholder {
+  grid-area: sidebar;
+  position: relative;
+  z-index: 0;
+
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+
+    &.sidebar_visible {
+      display: block;
+      background-color: theme.$color-gray-card-bg-40;
+      z-index: 3;
+
+      .sidebar_container {
+        transform: translateX(0);
+      }
+    }
+  }
+
+
+
+  .sidebar_container {
+    display: grid;
+    grid-template-rows: theme.$padding-v-large auto theme.$padding-v-large;
+    height: 100%;
+
+    @media screen and (max-width: theme.$sidebar-brakpoint) {
+      grid-area: unset;
+      position: fixed;
+      z-index: 3;
+      transform: translateX(calc(-100% - theme.$padding-h-large));
+    }
+
+    .content {
+      display: grid;
+      grid-template-rows: min-content auto min-content;
+      justify-content: center;
+      height: 100%;
+      padding: 8px 12px 0 20px;
+      background: linear-gradient(to right,
+          theme.$color-gray-card-shadow 0px,
+          theme.$color-gray-card-shadow 6px,
+          theme.$color-gray-card-bg 6px,
+          theme.$color-gray-card-bg 100%);
+
+      .header {
+        margin-left: 29px;
+      }
+
+      .body {
+        display: grid;
+        width: 100%;
+        padding: 62px 0 78px 0;
+
+        >nav {
+          display: grid;
+          grid-template-rows: repeat(6, min-content);
+          grid-gap: 12px;
+
+          .menu_item {
+            position: relative;
+            display: grid;
+            width: 214px;
+            padding: 10px 12px;
+            grid-template-columns: 24px auto;
+            grid-gap: 8px;
+            align-items: center;
+            height: 44px;
+            text-decoration: none;
+            color: theme.$color-white;
+            opacity: 0.7;
+
+            border-width: 3px;
+
+            .bgv {
+              position: absolute;
+              height: 100%;
+              top: 0;
+              bottom: 0;
+              left: 3px;
+              right: 3px;
+              background: transparent;
+              z-index: 10;
+            }
+
+            .bgh {
+              position: absolute;
+              width: 100%;
+              top: 3px;
+              bottom: 3px;
+              left: 0px;
+              right: 0px;
+              background: transparent;
+              z-index: 10;
+            }
+
+            svg,
+            path,
+            rect,
+            g,
+            polygon {
+              fill: theme.$color-white;
+              color: theme.$color-white;
+              z-index: 11;
+            }
+
+            span {
+              font-size: 16px;
+              line-height: 16px;
+              margin-bottom: 4px; // it's a font bug, TODO: fix Pixel font baseline position
+              z-index: 11;
+            }
+
+            &.selected {
+
+              span,
+              svg,
+              path,
+              rect,
+              g,
+              polygon {
+                color: theme.$color-primary;
+                fill: theme.$color-primary;
+              }
+
+              .bgh,
+              .bgv {
+                background: theme.$color-gray-card-shadow;
+              }
+            }
+
+          }
+        }
+
+        .addons {
+          align-self: end;
+          padding: 12px;
+          font-size: 16px;
+          color: theme.$color-white;
+          opacity: 0.7;
+          cursor: pointer;
+        }
+
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 35px);
+        grid-gap: 16px;
+        padding-left: 17px;
+
+        a {
+          cursor: pointer;
+          line-height: 0;
+
+          img: {}
+        }
+      }
+    }
+
+    .decoration {
+      display: grid;
+      grid-template-columns: 22px auto 22px;
+      height: theme.$padding-v-large;
+
+      >div {
+        height: theme.$padding-v-large;
+      }
+
+      .top {
+        background: linear-gradient(to bottom,
+            theme.$color-gray-card-shadow 0px,
+            theme.$color-gray-card-shadow 8px,
+            theme.$color-gray-card-bg 8px,
+            theme.$color-gray-card-bg 100%);
+      }
+
+      .bottom {
+        background-color: theme.$color-gray-card-bg;
+      }
+    }
+  }
+}

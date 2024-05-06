@@ -1,0 +1,97 @@
+@use "../../theme/theme.module.scss" as theme;
+
+$border-width-6: 6px;
+$border-width-4: 4px;
+$border-width-3_5: 3.5px; //should have display issues, talk to designer
+
+.px_container {
+  position: relative;
+  display: grid;
+  padding: $border-width-6;
+  z-index: 1;
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    padding: $border-width-4;
+  }
+
+  &.filter {
+    backdrop-filter: blur(4px);
+
+    &::before,
+    &::after {
+      background-color: theme.$color-gray-card-bg-40;
+    }
+  }
+
+  &.m {
+    padding: $border-width-4;
+
+    &::before {
+      top: $border-width-4;
+      bottom: $border-width-4;
+    }
+
+    &::after {
+      left: $border-width-4;
+      right: $border-width-4;
+    }
+  }
+
+  &.s {
+    padding: $border-width-3_5;
+
+    &::before {
+      top: $border-width-3_5;
+      bottom: $border-width-3_5;
+    }
+
+    &::after {
+      left: $border-width-3_5;
+      right: $border-width-3_5;
+    }
+  }
+
+  &.sm {
+    padding: $border-width-3_5;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: theme.$color-gray-card-shadow;
+    z-index: 1;
+  }
+
+  &::before {
+    top: $border-width-6;
+    bottom: $border-width-6;
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    top: 0;
+    bottom: 0;
+    left: $border-width-6;
+    right: $border-width-6;
+  }
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    &::before {
+      top: $border-width-4;
+      bottom: $border-width-4;
+    }
+
+    &::after {
+      left: $border-width-4;
+      right: $border-width-4;
+    }
+  }
+
+  >* {
+    position: relative;
+    z-index: 3;
+  }
+}

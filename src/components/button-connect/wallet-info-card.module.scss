@@ -1,0 +1,42 @@
+@use "../../theme/theme.module.scss" as theme;
+
+.container {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  .body {
+    position: relative;
+    min-width: 317px;
+    padding: theme.$padding-v-med theme.$padding-v-med 12px;
+
+    background-color: theme.$color-main-bg-elevated;
+
+    .row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      margin-bottom: theme.$gap-med;
+
+      &:nth-last-child(2) {
+        margin-bottom: theme.$padding-v-med;
+      }
+
+      .label {
+        @include theme.font-pixelmix;
+        font-size: theme.$font-size-default;
+        opacity: 0.6;
+      }
+
+      .value {
+        @include theme.font-pixelmix;
+        font-size: theme.$font-size-default;
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

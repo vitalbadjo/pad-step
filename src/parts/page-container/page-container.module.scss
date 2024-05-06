@@ -1,0 +1,29 @@
+@use "../../theme/theme.module.scss" as theme;
+
+.page_container {
+  display: grid;
+  grid-template-columns: theme.$sidebar-width minmax(840px, auto);
+  grid-template-rows: 62px auto;
+  grid-template-areas: "sidebar header" "sidebar body";
+  grid-row-gap: theme.$gap-regular;
+  grid-column-gap: theme.$gap-main;
+  min-height: theme.$height-page-min;
+  padding: theme.$padding-v-large theme.$padding-h-large;
+
+
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    display: grid;
+    grid-template-columns: minmax(240px, theme.$sidebar-brakpoint);
+    grid-template-rows: min-content;
+    grid-row-gap: theme.$gap-regular;
+    grid-column-gap: 0;
+    grid-template-areas: unset;
+    padding: theme.$mob-padding-v-med;
+
+  }
+}
+
+[class*=sidebar]:has(+ [class*=sidebar_visible]) {
+  transform: translateX(0);
+}

@@ -1,0 +1,94 @@
+$color-main-bg: #090A17;
+$color-main-bg-elevated: #151623;
+$color-primary: #B364D8;
+$color-primary-ghost: #8F50AD;
+$color-secondary: #83D987;
+$color-secondary-ghost: #69AE6C;
+$color-white: #FFFFFF;
+$color-white-menu-toggle: #D9D9D9;
+$color-gray-border: #474756;
+$color-gray-bar: #303143;
+$color-gray-card-bg: #151623;
+$color-gray-card-bg-40: rgba(21, 22, 35, 0.4);
+$color-gray-card-shadow: #232330;
+$color-red-button-shadow: #1A2035;
+$color-red: #FF3D3D;
+$color-transparrent: transparent;
+
+$border-width-input: 4px;
+$border-width-button: 6px;
+$border-width-button-mob: 4px;
+$border-width-modal: 6px;
+$border-width-modal-mob: 4px;
+
+$mobile-brakpoint: 360px;
+$sidebar-brakpoint: 768px;
+
+$gap-main: 32px;
+$gap-regular: 32px;
+$gap-med: 16px;
+$gap-sm: 8px;
+$mob-gap: 12px;
+$mob-gap-m: 10px;
+
+$padding-h-large: 40px;
+$padding-v-large: 32px;
+$padding-v-med: 24px;
+$mob-padding-h-large: 20px;
+$mob-padding-v-large: 16px;
+$mob-padding-v-med: 12px;
+$mob-padding-main: 16px;
+
+
+
+$sidebar-width: 246px;
+
+$height-page-min: 826px;
+
+$font-size-ssm: 12px;
+$font-size-sm: 14px;
+$font-size-default: 16px;
+$font-size-medium: 16px;
+$font-size-xl: 24px;
+
+$font-size-mob-s: 10px;
+$font-size-mob-m: 12px;
+$font-size-mob-l: 14px;
+$font-size-mob-h3: 20px;
+$font-height-mob-h3: 28px;
+
+
+@mixin font-ibm-med {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+  color: $color-white;
+}
+
+@mixin font-ibm-reg {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: $color-white;
+}
+
+@mixin font-ibm-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  color: $color-white;
+}
+
+@mixin font-pixel {
+  font-family: 'pixel_sans_serif_condensedRg';
+  font-weight: normal;
+  color: $color-white;
+  font-size: $font-size-default;
+}
+
+@mixin font-pixelmix {
+  font-family: 'pixelmixregular';
+  font-weight: normal;
+  color: $color-white;
+  font-size: $font-size-default;
+}

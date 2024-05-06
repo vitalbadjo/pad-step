@@ -1,0 +1,36 @@
+@use "../../theme/theme.module.scss" as theme;
+$red: theme.$color-red;
+$shadow: theme.$color-red-button-shadow;
+
+.button {
+  @include theme.font-pixelmix;
+  font-size: theme.$font-size-default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 47px;
+
+  background-image: url("../../media/images/button/btn-red-outlined.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  filter: drop-shadow(0px 4px 0px $shadow);
+
+  &:hover {
+    background-image: url("../../media/images/button/btn-red-filled.svg");
+    color: black;
+
+    [class*=svg_bg] {
+      [class*=px_btn_body] {
+        fill: $red;
+      }
+
+    }
+  }
+}

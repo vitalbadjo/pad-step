@@ -1,0 +1,105 @@
+@use "../../theme/theme.module.scss" as theme;
+$image-size: 134px;
+$mob-image-size: 106px;
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: theme.$padding-v-large;
+
+  &[class*=coins] {
+    .icon {
+      background-image: url("../../media/images/icons/icon-coins.svg");
+    }
+
+    .header .title {
+      color: theme.$color-secondary;
+    }
+
+    .footer {
+
+      .score,
+      .units {
+        color: theme.$color-secondary;
+      }
+    }
+
+  }
+
+  &[class*=iconReferral] {
+    .icon {
+      background-image: url("../../media/images/icons/icon-refferals.svg");
+    }
+
+    .header .title {
+      color: theme.$color-primary;
+    }
+
+    .footer {
+
+      .score,
+      .units {
+        color: theme.$color-primary;
+      }
+    }
+
+  }
+
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: start;
+
+    .title {
+      @include theme.font-pixel;
+      font-size: 28px;
+    }
+
+    .icon {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: $image-size;
+      height: $image-size;
+      opacity: 0.2;
+
+    }
+  }
+
+  .footer {
+    .score {
+      @include theme.font-pixelmix;
+      font-size: 100px;
+      margin-right: 16px;
+    }
+
+    .units {
+      @include theme.font-pixelmix;
+      font-size: theme.$font-size-default;
+    }
+  }
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    padding: theme.$mob-padding-v-med;
+
+    .header {
+      .title {
+        font-size: theme.$font-size-mob-h3;
+      }
+
+      .icon {
+        width: 112px;
+        height: $mob-image-size;
+      }
+    }
+
+    .footer {
+      .score {
+        font-size: 70px;
+        line-height: 58px;
+      }
+    }
+  }
+}

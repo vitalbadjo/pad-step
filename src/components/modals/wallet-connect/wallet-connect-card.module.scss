@@ -1,0 +1,46 @@
+@use "../../../theme/theme.module.scss" as theme;
+
+.card_wallet {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  min-width: 260px;
+  background-color: theme.$color-main-bg;
+  padding: 18px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0 50px;
+
+    >:first-child {
+      display: block;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+
+    .wallet_name {
+      @include theme.font-pixel;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .btn_action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      @include theme.font-ibm-reg;
+      font-size: theme.$font-size-default;
+      line-height: theme.$font-size-default;
+      cursor: pointer;
+    }
+  }
+}

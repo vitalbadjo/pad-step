@@ -1,0 +1,74 @@
+@use "../../../theme/theme.module.scss" as theme;
+
+.modal_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal {
+    background-color: theme.$color-main-bg-elevated;
+    padding: 24px 26px 34px;
+    width: 832px;
+    max-width: 90vw;
+
+    .divider {
+      display: block;
+      height: 1px;
+      margin-bottom: 24px;
+      background-color: theme.$color-gray-card-shadow;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      h4 {
+        @include theme.font-pixel;
+        font-size: theme.$font-size-xl;
+        line-height: theme.$font-size-xl;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 33px;
+        background-color: theme.$color-main-bg-elevated;
+        cursor: pointer;
+      }
+    }
+
+    .body {
+      .description {
+        display: block;
+        @include theme.font-pixelmix;
+        font-size: theme.$font-size-sm;
+        opacity: 0.6;
+        margin-bottom: 16px;
+      }
+
+      .wallet_cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: theme.$gap-med;
+
+        @media screen and (max-width: 700px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      }
+    }
+  }
+}

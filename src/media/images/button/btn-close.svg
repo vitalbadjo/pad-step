@@ -1,0 +1,12 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.000488281" y="16" width="4" height="4" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 20.0005 16)" fill="white"/>
+<rect x="4.00049" y="12" width="4" height="4" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 16.0005 12)" fill="white"/>
+<rect x="8.00049" y="7.99997" width="4" height="4" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 12.0005 7.99997)" fill="white"/>
+<rect x="12.0005" y="3.99997" width="4" height="4" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 8.00049 3.99997)" fill="white"/>
+<rect x="16.0005" y="-3.05176e-05" width="4" height="4" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 4.00049 -3.05176e-05)" fill="white"/>
+</svg>

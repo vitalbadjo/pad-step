@@ -1,0 +1,52 @@
+@use "../../theme/theme.module.scss" as theme;
+
+.header {
+  position: relative;
+  z-index: 2;
+  grid-area: header;
+  display: grid;
+  grid-gap: theme.$padding-h-large;
+  grid-template-columns: 1fr 226px;
+
+  .sidebar_toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 43px;
+    height: 40px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 43px;
+      height: 3px;
+      background-color: theme.$color-white-menu-toggle;
+    }
+
+    &:before {
+      top: 11px;
+    }
+
+    &:after {
+      bottom: 11px;
+    }
+  }
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    gap: 21px;
+    grid-area: unset;
+
+    .sidebar_toggler {
+      display: block;
+    }
+  }
+
+}

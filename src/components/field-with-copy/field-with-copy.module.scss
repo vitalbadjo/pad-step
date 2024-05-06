@@ -1,0 +1,61 @@
+@use "../../theme/theme.module.scss" as theme;
+
+.container {
+  background-color: theme.$color-main-bg;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  overflow: hidden;
+  font-size: theme.$font-size-default;
+
+
+  .text {
+    @include theme.font-ibm-reg;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .btn {
+    white-space: nowrap;
+    line-height: 0;
+    cursor: pointer;
+  }
+
+  .popover {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+
+    .popover_text {
+      display: block;
+      background-color: theme.$color-main-bg;
+      padding: 0 6px;
+      @include theme.font-pixel;
+      font-size: theme.$font-size-ssm;
+    }
+  }
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    padding: 6px 16px;
+
+    .popover {
+      .popover_text {
+        font-size: theme.$font-size-mob-s;
+      }
+    }
+
+    .btn svg {
+      width: 44px;
+      height: 20px;
+    }
+
+    .text {
+      font-size: theme.$font-size-mob-l;
+    }
+  }
+}

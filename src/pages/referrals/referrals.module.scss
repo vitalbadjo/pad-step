@@ -1,0 +1,83 @@
+@use "../../theme/theme.module.scss" as theme;
+
+.referral_page {
+  display: grid;
+  grid-template-columns: 11fr 10fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "content stats1" "content stats2";
+  grid-gap: theme.$gap-med;
+
+
+  .content {
+    padding: theme.$padding-v-large theme.$padding-h-large;
+    grid-area: content;
+
+    >h3 {
+      margin-bottom: 48px;
+      @include theme.font-pixel;
+      font-size: 28px;
+    }
+
+    >span {
+      margin-bottom: 24px;
+      @include theme.font-pixel;
+      font-size: 18px;
+    }
+
+    >p {
+      @include theme.font-ibm-reg;
+      font-size: theme.$font-size-default;
+    }
+
+    @media screen and (max-width: theme.$sidebar-brakpoint) {
+      padding: theme.$mob-padding-h-large theme.$mob-padding-v-large;
+
+      >h3 {
+        margin-bottom: theme.$mob-padding-h-large;
+        font-size: theme.$font-size-mob-h3;
+        line-height: theme.$font-height-mob-h3;
+      }
+
+      >span {
+        font-size: theme.$font-size-mob-l;
+        margin-bottom: theme.$mob-padding-v-med;
+      }
+    }
+
+  }
+
+  .stats_card {
+    // height: 320px;
+
+    &.stats1 {
+      grid-area: stats1;
+    }
+
+    &.stats2 {
+      grid-area: stats2;
+    }
+  }
+
+  @media screen and (max-width: theme.$sidebar-brakpoint) {
+    grid-template-columns: auto;
+    grid-template-rows: none;
+    grid-template-areas: none;
+    grid-gap: theme.$mob-gap-m;
+
+    .content {
+      grid-area: unset;
+    }
+
+    .stats_card {
+      // height: 320px;
+
+      &.stats1 {
+        grid-area: unset;
+      }
+
+      &.stats2 {
+        grid-area: unset;
+      }
+    }
+  }
+}
